@@ -1,3 +1,5 @@
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyAhKCJWa_XIGvoYpe_CbLf9Uw60G2RM-R0",
   authDomain: "login-41986.firebaseapp.com",
@@ -6,6 +8,10 @@ const firebaseConfig = {
   messagingSenderId: "214081083315",
   appId: "1:214081083315:web:3fc2e8a1a15e16e48d9dc6"
 };
+
+//TO DO: EVERYTHING!!!
+
+// Inicializa Firebase
 const app = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 document.getElementById('login-form').addEventListener('submit', function (e) {
