@@ -1,0 +1,23 @@
+:root{
+    --color-primario: white;
+    --fuente-principal: 'Franklin Gothic Medium';
+}
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.freepik.com/premium-vector/cube-pattern-black-background_43761-7.jpg');
+    background-size: 600px;
+    background-repeat: repeat;
+    z-index: -1;
+}
+.form-label {
+    font-family: var(--fuente-principal);
+    color: var(--color-primario);
+}
+.fs-1 {
+    font-family: var(--fuente-principal);
+    color: var(--color-primario) 
+ }
