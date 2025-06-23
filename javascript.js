@@ -6,15 +6,26 @@ const firebaseConfig = {
   messagingSenderId: "214081083315",
   appId: "1:214081083315:web:3fc2e8a1a15e16e48d9dc6"
 };
-
-// Inicializa Firebase
 const app = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
-function enviar(){
-let email= document.getElementById("email").value;
-let contraseña= document.getElementById("contraseña").value;
-    if (!email || !contraseña){
-        alert("Por favor, complete los campos")
-    }
-    else {alert("lalelilolu")}
-}
+document.getElementById('login-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  let email = document.getElementById("email").value;
+  let contraseña = document.getElementById("contraseña").value;
+  if (!email || !contraseña) {
+    alert("Por favor, complete todos los campos");
+  } else {
+    auth.signInWithEmailAndPassword(email, contraseña)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        alert("Bienvenido, " + user.email);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert("Error: " + errorMessage);
+        console.log("Error en login:", errorCode, errorMessage);
+      });
+  }
+});
+
