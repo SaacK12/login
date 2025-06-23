@@ -1,10 +1,10 @@
 const firebaseConfig = {
   apiKey: "AIzaSyAhKCJWa_XIGvoYpe_CbLf9Uw60G2RM-R0",
-  authDomain: "TU_AUTH_DOMAIN",
+  authDomain: "login-41986.firebaseapp.com",
   projectId: "login-41986",
-  storageBucket: "TU_STORAGE_BUCKET",
-  messagingSenderId: "TU_MESSAGING_SENDER_ID",
-  appId: "TU_APP_ID"
+  storageBucket: "login-41986.firebasestorage.app",
+  messagingSenderId: "214081083315",
+  appId: "1:214081083315:web:3fc2e8a1a15e16e48d9dc6"
 };
 
 // Inicializa Firebase
