@@ -34,7 +34,6 @@ else{
     .catch(error => {
         alert("Error al enviar los datos (Gracias Google)");
         console.error('Error:', error);
-        window.location.href = 'https://youtu.be/MS8OawQegYE?si=64buJf31Ro_6FC-O';
     });
  }
  }
