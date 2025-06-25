@@ -31,9 +31,5 @@ else{
         alert("Datos enviados correctamente");
         console.log(result);
     })
-    .catch(error => {
-        alert("Error al enviar los datos (Gracias Google)");
-        console.error('Error:', error);
-    });
  }
  }
