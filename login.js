@@ -22,7 +22,27 @@ window.login = function () {
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       alert("Login exitoso");
-      window.location.href = 'Formulario/index.html'; // o lo que sea que venga después del login
+      window.location.href = 'Formulario/index.html';
+    })
+    .catch(error => {
+      alert("Error: " + error.message);
+    });
+};
+
+import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+
+// Función para recuperar contraseña
+window.recuperarContrasena = function () {
+  const email = document.getElementById("email").value;
+
+  if (!email) {
+    alert("Por favor ingresá tu correo electrónico.");
+    return;
+  }
+
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert("Te enviamos un correo para restablecer tu contraseña.");
     })
     .catch(error => {
       alert("Error: " + error.message);
