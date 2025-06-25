@@ -20,6 +20,7 @@
   <div class="mb-3 text-center">
     <label for="password" class="form-label fs-3">Contraseña</label>
     <input type="password" class="form-control" id="password">
+    <i class="bi bi-eye-slash" id="togglePassword"></i>
   </div>
   <div class="d-grid gap-2 col-3 mx-auto">
   <button type="button" class="btn btn-primary" onclick="registrar()">Registrar</button>
@@ -31,5 +32,16 @@
   <div class="pie-de-pagina text-center p-4" style="background-color: rgb(34, 33, 33);">
     @Marco Pileci 2025. Agradecimientos especiales a Fútbol Libre y ChatGTP
   </div>
+  </footer>
+      <!--Mostrar / Ocultar contraseña-->  
+<script>
+const togglePassword= document.querySelector("#togglePassword");
+  const password= document.querySelector("#password");
+    togglePassword.addEventListener("click", (e) => {
+  const type= password.getAttribute("type") === "password" ? "text" : "password";
+  password.setAttribute("type", type);
+  e.target.classList.toggle("bi-eye");
+});
+</script>
 </body>
 </html>
