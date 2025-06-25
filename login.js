@@ -22,7 +22,7 @@ window.login = function () {
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       alert("Login exitoso");
-      window.location.href = "balatrobalatres.html"; // o lo que sea que venga después del login
+      window.location.href = 'formulario/index.html'; // o lo que sea que venga después del login
     })
     .catch(error => {
       alert("Error: " + error.message);
