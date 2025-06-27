@@ -22,7 +22,7 @@ window.login = function () {
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       alert("Login exitoso");
-      window.location.href = 'Formulario/index.html';
+      window.location.href = 'Formulario/login.html';
     })
     .catch(error => {
       alert("Error: " + error.message);

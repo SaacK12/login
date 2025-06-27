@@ -33,3 +33,6 @@
     position: relative;
     z-index: 2;
 }
+.logo{
+    transform: scale(1.2);
+}

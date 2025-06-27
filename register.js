@@ -23,7 +23,7 @@ window.registrar = function () {
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       alert("Cuenta creada con éxito");
-      window.location.href = "index.html";
+      window.location.href = "login.html";
     })
     .catch(error => {
       alert("Error: " + error.message);
