@@ -1,11 +1,8 @@
+// register.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-import { 
-  getAuth, 
-  signInWithEmailAndPassword, 
-  onAuthStateChanged, 
-  signOut 
-} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 
+// Configuración de Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAhKCJWa_XIGvoYpe_CbLf9Uw60G2RM-R0",
   authDomain: "login-41986.firebaseapp.com",
@@ -18,29 +15,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// navbar
-const userMenu = document.getElementById("user-menu");
-const userDropdown = document.getElementById("userDropdown");
-const logoutBtn = document.getElementById("logout-btn");
-const loginLink = document.getElementById("login-link");
+// Función para registrar
+window.registrar = function () {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    userDropdown.textContent = user.email;
-    userMenu.style.display = "block";
-    loginLink.style.display = "none";
-  } else {
-    userMenu.style.display = "none";
-    loginLink.style.display = "block";
-  }
-});
-
-logoutBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  signOut(auth).then(() => {
-    console.log("Sesión cerrada");
-    location.reload();
-  }).catch((error) => {
-    console.error("Error al cerrar sesión: ", error);
-  });
-});
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(userCredential => {
+      alert("Cuenta creada con éxito");
+      window.location.href = "login.html";
+    })
+    .catch(error => {
+      alert("Error: " + error.message);
+    });
+};
